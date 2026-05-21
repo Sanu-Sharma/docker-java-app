@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  
+  # Java Application Service
+  java-app:
+    build: .                    # Build image from Dockerfile
+    container_name: java-container  # Name of the container
+    depends_on:
+      - nginx                   # Start after nginx is ready
+
+  # Nginx Web Server Service
+  nginx:
+    image: nginx:latest         # Use official nginx image
+    container_name: nginx-container  # Name of the container
+    ports:
+      - "8080:80"               # Host port 8080 → Container port 80
