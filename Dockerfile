@@ -5,7 +5,7 @@ FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 
 # Copy Java source file into container
-COPY src/Main.java /app/Main.java
+COPY src/Main.java .
 
 # Compile the Java file
 RUN javac Main.java
